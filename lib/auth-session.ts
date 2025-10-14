@@ -13,7 +13,7 @@ export interface SessionUser {
 
 export async function getSession(): Promise<{ user: SessionUser } | null> {
   try {
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
     const sessionToken = cookieStore.get("session-token")?.value;
 
     if (!sessionToken) {
