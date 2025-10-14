@@ -119,13 +119,14 @@ export default async function DashboardPage() {
                         : "Draft"}
                     </span>
                     {evaluation.status === "completed" && (
-                      <Link
-                        href={`/evaluate/${evaluation.id}/results`}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium transition-colors text-sm"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        View Results
-                      </Link>
+                      <div onClick={(e) => e.stopPropagation()}>
+                        <Link
+                          href={`/evaluate/${evaluation.id}/results`}
+                          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium transition-colors text-sm"
+                        >
+                          View Results
+                        </Link>
+                      </div>
                     )}
                   </div>
                 </div>
